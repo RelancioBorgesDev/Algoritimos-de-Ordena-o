@@ -60,4 +60,38 @@ public class SortAlgos {
 
         return vetor;
     }
+
+
+    public int[] QuickSort(int[] vetor, int low, int high ){
+        int pivot = vetor.length-1;
+        int lp = low;
+        int rp = high;
+
+        if(low >= high){
+            return vetor;
+        }
+
+        while(lp < rp){
+            while(vetor[lp] <= vetor[pivot] && lp < rp) {
+                lp++;
+            }
+            while(vetor[rp] >= vetor[pivot] && lp < rp){
+                rp--;
+            }
+            trocar(vetor, lp, rp);
+        }
+        trocar(vetor, lp, high);
+
+        QuickSort(vetor, low, lp-1);
+        QuickSort(vetor, lp+1, high);
+
+        return vetor;
+    }
+
+    private void trocar (int[] vetor, int index1, int index2){
+        int aux = vetor[index1];
+        vetor[index1] = vetor[index2];
+        vetor[index2] = aux;
+    }
+
 }

@@ -15,7 +15,8 @@ public class App {
         int [] vetor3 = {8,5,1,3};
         SortAlgos sa = new SortAlgos();
         //sa.BubbleSort(vetor);
-        sa.InsertionSort(vetor3);
+        //sa.InsertionSort(vetor3);
+        System.out.println(Arrays.toString(sa.QuickSort(vetor, 0, vetor.length-1)));
        //System.out.println(Arrays.toString(sa.SelectionSort(vetor2)));
     }
 }
